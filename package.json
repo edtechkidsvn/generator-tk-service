@@ -1,6 +1,6 @@
 {
   "name": "generator-tk-service",
-  "version": "4.2.0",
+  "version": "4.2.1",
   "description": "Create awesome APIs with Typescript, ExpressJS and Swagger.",
   "main": "app/index.js",
   "scripts": {
