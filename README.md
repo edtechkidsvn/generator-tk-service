@@ -1,19 +1,5 @@
-# generator-express-no-stress-typescript
+# generator-tk-service
 
-![](https://img.shields.io/badge/status-stable-green.svg) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/21e362094c5a4c0da4841fc172cee95d)](https://www.codacy.com/app/cdimascio/generator-express-no-stress-typescript?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=cdimascio/generator-express-no-stress-typescript&amp;utm_campaign=Badge_Grade) ![](https://img.shields.io/badge/license-MIT-blue.svg)
-
-Create awesome [Express.js](www.expressjs.com) applications with best of breed tech including [Typescipt](https://www.typescriptlang.org/), structured logging with [Pino](https://github.com/pinojs/pino), API validation and interactive documentation via [Swagger](http://swagger.io/), environment based config with [dotenv](https://github.com/motdotla/dotenv).
-
-<p align="center">
-<img src="https://raw.githubusercontent.com/cdimascio/generator-express-no-stress-typescript/master/assets/express-no-stress-logo-ts.jpg"
-</p>
-
-generator-express-no-stress-typescript gets you up and running in seconds. It's ridiculously easy to configure. Heck, just take the defaults. Start it. Write code.
-
-This generator scaffolds a fully functioning REST API server complete with interactive documentation, API validation, structured logging, environment driven config, and more. Simply run the generator and smile :-D
-
-This project is a Typescript variant of [generator-express-no-stress](https://github.com/cdimascio/generator-
--stress)
 
 [Here's what you get!](#what-you-get)
 
@@ -22,7 +8,7 @@ This project is a Typescript variant of [generator-express-no-stress](https://gi
 _Requires Node 6 or greater_
 
 ```shell
-npm install -g yo generator-express-no-stress-typescript
+npm install -g yo generator-tk-service
 ```
 
 - See [here](#usage-cli) for use with Yarn and/or Docker
@@ -30,7 +16,7 @@ npm install -g yo generator-express-no-stress-typescript
 ## Scaffold
 
 ```shell
-yo express-no-stress-typescript myapp
+yo tk-service myapp
 cd myapp
 ```
 
@@ -77,7 +63,7 @@ npm run test:debug
 ## Usage: CLI
 
 ```shell
-yo express-no-stress-typescript [appname] [--yarn] [--docker]
+yo tk-service [appname] [--yarn] [--docker]
 ```
 
 | Option     | default | Description                                                                |
@@ -113,7 +99,7 @@ cf push myapp
 
 ```
 # scaffold
-yo express-no-stress-typescript myapp --yarn
+yo tk-service myapp --yarn
 
 # start
 cd myapp
