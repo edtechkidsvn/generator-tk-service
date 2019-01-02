@@ -1,15 +1,15 @@
 {
-  "name": "generator-express-no-stress-typescript",
+  "name": "tk-generator-express-typescript",
   "version": "4.2.0",
   "description": "Create awesome APIs with Typescript, ExpressJS and Swagger.",
   "main": "app/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Carmine DiMascio <cdimascio@gmail.com> (https://github.com/cdimascio)",
+  "author": "Huy <huynq.work@gmail.com> (https://github.com/qhuydtvt/tk-generator-express-typescript)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cdimascio/generator-express-no-stress-typescript"
+    "url": "https://github.com/qhuydtvt/tk-generator-express-typescript"
   },
   "license": "MIT",
   "dependencies": {
