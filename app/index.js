@@ -87,6 +87,7 @@ module.exports = class extends Generator {
           'package.json',
           'README.md',
           'server/routes.ts',
+          'server/env/defaults.ts',
           'server/env/development.ts',
           '.env',
           'test/examples.controller.ts',
