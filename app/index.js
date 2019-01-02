@@ -20,6 +20,8 @@ module.exports = class extends Generator {
     this.description = 'My cool TypeScript app';
     this.version = '1.0.0';
     this.apiRoot = '/api/v1';
+    this.dbUri = 'mongodb://localhost:27017/';
+    this.dbName = 'tkdb';
   }
 
   initializing() {}
@@ -41,6 +43,16 @@ module.exports = class extends Generator {
         name: 'apiVersion',
         message: `Version [${this.version}]`,
       },
+      {
+        type: 'input',
+        name: 'dbUri',
+        message: `Database Uri [${this.dbUri}]`,
+      },
+      {
+        type: 'input',
+        name: 'dbName',
+        message: `Database Name [${this.dbName}]`,
+      },
     ];
 
     if (!this.options.appname) {
@@ -56,6 +68,8 @@ module.exports = class extends Generator {
       this.description = r.description || this.description;
       this.version = r.version || this.version;
       this.apiRoot = r.apiRoot ? r.apiRoot.replace(/^\/?/, '/') : this.apiRoot;
+      this.dbUri = r.dbUri || this.dbUri;
+      this.dbName = r.dbName || this.dbName;
     });
   }
 
@@ -73,6 +87,7 @@ module.exports = class extends Generator {
           'package.json',
           'README.md',
           'server/routes.ts',
+          'server/env/development.ts',
           '.env',
           'test/examples.controller.ts',
           'server/common/swagger/Api.yaml',
@@ -98,6 +113,8 @@ module.exports = class extends Generator {
           description: this.description,
           version: this.version,
           apiRoot: this.apiRoot,
+          dbUri: this.dbUri,
+          dbName: this.dbName,
         };
 
         files.forEach(f => {

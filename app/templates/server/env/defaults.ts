@@ -3,8 +3,8 @@ const config: any = {
   port: process.env.PORT || 3000,
   env: 'development',
   database: {
-    MONGODB_URI: 'mongodb://localhost:27017/',
-    MONGODB_DB_MAIN: 'dev_lm_db',
+    MONGODB_URI: "<%= dbUri %>",
+    MONGODB_DB_MAIN: "<%= dbName %>",
   }
 };
 
