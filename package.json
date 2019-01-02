@@ -13,6 +13,8 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@types/node": "^10.12.18",
+    "mongoose": "^5.4.1",
     "yeoman-generator": "^2.0.5"
   },
   "devDependencies": {},
