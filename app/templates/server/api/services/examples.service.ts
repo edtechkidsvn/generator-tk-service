@@ -1,36 +1,18 @@
 import Promise from 'bluebird';
-import L from '../../common/logger'
-
-let id = 0;
-interface Example {
-  id: number,
-  name: string
-};
-
-const examples: Example[] = [
-    { id: id++, name: 'example 0' }, 
-    { id: id++, name: 'example 1' }
-];
+import L from '../../common/logger';
+import Example, {IExampleModel} from '../../models/example';
 
 export class ExamplesService {
-  all(): Promise<Example[]> {
-    L.info(examples, 'fetch all examples');
-    return Promise.resolve(examples);
+  all(): Promise<IExampleModel[]> {
+    return Example.find();
   }
 
-  byId(id: number): Promise<Example> {
-    L.info(`fetch example with id ${id}`);
-    return this.all().then(r => r[id])
+  byId(_id: string): Promise<IExampleModel> {
+    return Example.findById(_id);
   }
 
-  create(name: string): Promise<Example> {
-    L.info(`create example with name ${name}`);
-    const example: Example = {
-      id: id++,
-      name
-    };
-    examples.push(example)
-    return Promise.resolve(example);
+  create(name: string): Promise<IExampleModel> {
+    return Example({name}).save();
   }
 }
 

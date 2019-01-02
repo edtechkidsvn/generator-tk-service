@@ -51,16 +51,16 @@ paths:
         200:
           description: Returns all examples
 
-  /examples/{id}:
+  /examples/{_id}:
     get:
       tags:
         - Examples
       parameters:
-        - name: id
+        - name: _id
           in: path
           required: true
-          description: The id of the example to retrieve
-          type: integer
+          description: The _id of the example to retrieve
+          type: string
       responses:
         200:
           description: Return the example with the specified id

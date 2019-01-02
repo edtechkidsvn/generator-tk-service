@@ -7,7 +7,7 @@ export class Controller {
   }
 
   byId(req: Request, res: Response): void {
-    ExamplesService.byId(req.params.id).then(r => {
+    ExamplesService.byId(req.params._id).then(r => {
       if (r) res.json(r);
       else res.status(404).end();
     });
@@ -17,7 +17,7 @@ export class Controller {
     ExamplesService.create(req.body.name).then(r =>
       res
         .status(201)
-        .location(`<%= apiRoot %>/examples/${r.id}`)
+        .location(`<%= apiRoot %>/examples/${r._id}`)
         .json(r),
     );
   }
