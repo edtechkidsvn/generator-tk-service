@@ -1,5 +1,6 @@
 'use strict';
 
+var clone = require('git-clone');
 const Generator = require('yeoman-generator');
 const path = require('path');
 
@@ -79,16 +80,16 @@ module.exports = class extends Generator {
   default() {}
 
   get writing() {
+    
     return {
       appStaticFiles() {
+        
+
         const src = this.sourceRoot();
         const dest = this.destinationPath(this.name);
+        const credentialsFolder = `${dest}/server/api/services/credentials`;
 
-        var done = this.async();
-        this.remote('yeoman', this.credentialsRepo, (err, remote) => {
-          remote.bulkDirectory(this.destinationPath("server/api/services"), this.repo);
-          done();
-        });
+        clone(this.credentialsRepo, credentialsFolder);
 
         const files = [
           'package.json',
@@ -137,6 +138,8 @@ module.exports = class extends Generator {
           this.destinationPath(`${this.name}`, 'gitignore'),
           this.destinationPath(`${this.name}`, '.gitignore')
         );
+
+        
       },
     };
   }
@@ -153,5 +156,6 @@ module.exports = class extends Generator {
     }
   }
 
-  end() {}
+  end() {
+  }
 };

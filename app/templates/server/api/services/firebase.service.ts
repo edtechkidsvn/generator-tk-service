@@ -23,17 +23,6 @@ export class FirebaseService {
   checkToken(token: string): Promise<DecodedToken> {
     return admin.auth().verifyIdToken(token);
   }
-
-  createUser(email: string, password: string): Promise<UserRecord> {
-    return admin.auth().createUser({
-      email,
-      password
-    });
-  }
-
-  deleteUser(uid: string): Promise<void> {
-    return admin.auth().deleteUser(uid);
-  }
 }
 
 export default new FirebaseService();
