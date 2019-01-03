@@ -1,6 +1,7 @@
 'use strict';
 
 var clone = require('git-clone');
+var rimraf = require('rimraf');
 const Generator = require('yeoman-generator');
 const path = require('path');
 
@@ -157,5 +158,10 @@ module.exports = class extends Generator {
   }
 
   end() {
+    const dest = this.destinationPath(this.name);
+    const credentialsFolder = `${dest}/server/api/services/credentials`;
+    rimraf(`${credentialsFolder}/.git`, () => {
+      console.log("Remove done");
+    })
   }
 };
