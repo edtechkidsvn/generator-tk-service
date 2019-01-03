@@ -22,6 +22,7 @@ module.exports = class extends Generator {
     this.apiRoot = '/api/v1';
     this.dbUri = 'mongodb://localhost:27017/';
     this.dbName = 'tkdb';
+    this.credentialsRepo = "https://gitlab.com/tk-services/tk-credentials";
   }
 
   initializing() {}
@@ -82,6 +83,12 @@ module.exports = class extends Generator {
       appStaticFiles() {
         const src = this.sourceRoot();
         const dest = this.destinationPath(this.name);
+
+        var done = this.async();
+        this.remote('yeoman', this.credentialsRepo, (err, remote) => {
+          remote.bulkDirectory(this.destinationPath("server/api/services"), this.repo);
+          done();
+        });
 
         const files = [
           'package.json',

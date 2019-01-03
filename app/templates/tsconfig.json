@@ -9,6 +9,6 @@
     "outDir": "dist",
     "typeRoots": ["node_modules/@types"]
   },
-  "include": ["typings.d.ts", "server/**/*.ts"],
+  "include": ["typings.d.ts", "server/**/*.ts", ".vscode/*.code-snippets"],
   "exclude": ["node_modules"],
 }
