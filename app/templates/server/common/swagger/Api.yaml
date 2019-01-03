@@ -33,6 +33,12 @@ paths:
       tags:
         - Examples
       description: Fetch all examples
+      parameters:
+        - name: x-auth-token
+          in: header
+          required: true
+          type: string
+          description: Firebase access token
       responses:
         200:
           description: Returns all examples
@@ -41,6 +47,12 @@ paths:
         - Examples
       description: Create a new example
       parameters:
+        - name: x-auth-token
+          in: header
+          required: true
+          type: string
+          description: Firebase access token
+
         - name: example
           in: body
           description: an example
@@ -56,6 +68,12 @@ paths:
       tags:
         - Examples
       parameters:
+        - name: x-auth-token
+          in: header
+          required: true
+          type: string
+          description: Firebase access token
+          
         - name: _id
           in: path
           required: true
